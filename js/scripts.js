@@ -1,3 +1,17 @@
+const buttons = document.querySelectorAll(".chkDiv")
+for (const button of buttons) {
+    button.addEventListener('click', function (event) {
+        const target = this.querySelector('.content-inner');
+        if (target.classList.contains('active')) {
+            target.classList.remove('active');
+            target.style.display = 'none';
+        } else {
+            target.classList.add('active');
+            target.style.display = 'block';
+        }
+    })
+}
+
 (function ($) {
     "use strict"; // Start of use strict
 
@@ -30,13 +44,4 @@
         $(this).find(".moveDiv").show();
 
     })
-})(jQuery); // End of use strict
-
-// var moveDiv = document.getElementsByClassName(moveDiv);
-
-// document.getElementsByClassName("chkDiv").onclick = lodeOn();
-
-// function lodeOn() {
-//     alert("??")
-
-// }
+})(jQuery);
